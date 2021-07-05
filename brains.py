@@ -67,7 +67,7 @@ def key_pressed_check(ex):
     elif ex == '=':
         equals()
         
-        # Operation Logic
+# Operation Logic
 def press(button_clicked):
     if dS.get_data() == '0' and button_clicked == '0':
         dS.set_data('0')
