@@ -66,3 +66,41 @@ def key_pressed_check(ex):
         press('π')
     elif ex == '=':
         equals()
+        
+        # Operation Logic
+def press(button_clicked):
+    if dS.get_data() == '0' and button_clicked == '0':
+        dS.set_data('0')
+    elif dS.get_data() == '0':
+        dS.set_data(button_clicked)
+    else:
+        dS.add_data(button_clicked)
+    print(dS.get_data()) # For output check
+def cls():
+    dS.del_data()
+    dS.set_data('0')
+    dS.set_result('0')
+    print(dS.get_data()) # For output check
+
+def dels():
+    x = dS.get_data()
+    x = x[:-1]
+    dS.set_data(x)
+    # print(dS.get_data()) # For output check
+
+def equals():
+    PI = str(pi)
+    result = str(eval(dS.get_data().replace('π', PI)))
+    print(result) # For output check
+    dS.set_result(result)
+
+# Key press event
+def key_press(event):
+    pressed = event.char
+    key_pressed_check(pressed)
+    # print(pressed, ' is pressed.')
+
+def copy2Clip():
+    coppy = str(dS.get_result())
+    print(coppy)
+    subprocess.run(['clip.exe'], input= coppy.strip().encode('utf-16'), check=TRUE)
