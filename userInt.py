@@ -43,6 +43,7 @@ root.rowconfigure(3, weight=5)
 root.rowconfigure(4, weight=5)
 root.rowconfigure(5, weight=5)
 root.rowconfigure(6, weight=5)
+
 # Column Configure
 root.columnconfigure(0, weight=1)
 root.columnconfigure(1, weight=1)
